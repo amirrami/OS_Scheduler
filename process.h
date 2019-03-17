@@ -1,6 +1,6 @@
 #ifndef PROCESS_H
 #define PROCESS_H
-
+#include<QString>
 
 class Process
 {
@@ -14,7 +14,10 @@ public:
     int getPriority();
     void setWaitingTime(int waitingTime);
     int getWaitingTime();
+    void setName(QString name);
+    QString getName();
 private:
+    QString name;
     int burstTime;
     int arrivalTime;
     int priority;

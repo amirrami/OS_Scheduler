@@ -38,3 +38,11 @@ int Process::getWaitingTime(){
     return this->waitingTime;
 }
 
+void Process::setName(QString name){
+    this->name = name;
+}
+
+QString Process::getName(){
+    return this->name;
+}
+
