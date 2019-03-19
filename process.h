@@ -15,6 +15,8 @@ public:
     void setWaitingTime(int waitingTime);
     int getWaitingTime();
     void setName(QString name);
+    void decrementBurstTime();
+    void incrementWaitingTime();
     QString getName();
 private:
     QString name;

@@ -51,7 +51,7 @@ View::View(QWidget *parent,QVector<QString> signal,QVector<QString> signalNames,
 /****************************************************************************/
     // chart setup
     m_chart = new QChart;
-    m_chart->setMinimumSize(640, 480);
+    m_chart->setMinimumSize(480, 200);
     m_chart->setTitle("Hover the line to show callout. Click the line to make it stay");
     m_chart->legend()->hide();
     // axis setup
@@ -60,10 +60,10 @@ View::View(QWidget *parent,QVector<QString> signal,QVector<QString> signalNames,
     m_chart->addAxis(axisX, Qt::AlignBottom);
     m_chart->addAxis(axisY, Qt::AlignLeft);
     m_chart->setTitle("PCI simulatiom");
-    axisX->setRange(0,NumberOCycles*2);
-    axisX->setTickCount(NumberOCycles*2+1);
-    axisY->setRange(0,30);
-    axisY->setTickCount(31);
+    axisX->setRange(0,NumberOCycles);
+    axisX->setTickCount(NumberOCycles+1);
+    axisY->setRange(0,2);
+    axisY->setTickCount(3);
     axisX->setLabelsVisible(true);
     axisY->setLabelsVisible(true);
 
@@ -75,7 +75,7 @@ View::View(QWidget *parent,QVector<QString> signal,QVector<QString> signalNames,
     int dataError=0;
     for(int i =0; i<signal.size();i++)
     {
-        if(signalNames[i]=="AD" || signalNames[i]=="CBE")
+        if(signalNames[i]=="Processor" || signalNames[i]=="CBE")
         {
             SignalValues.resize(signal.size()-1);
             SignalValuesRange.resize(signal.size()-1);

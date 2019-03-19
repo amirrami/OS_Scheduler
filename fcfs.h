@@ -8,7 +8,7 @@ class FCFS
 public:
     FCFS();
     void setParameters(QVector<Process> process);
-    void getResults(QString *ToDrawSignal, QString *ToDrawProcess, int* averageWaitingTime);
+    void getResults(QString *ToDrawSignal, QString *ToDrawProcess, float* averageWaitingTime);
 };
 
 #endif // FCFS_H

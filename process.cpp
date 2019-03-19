@@ -46,3 +46,11 @@ QString Process::getName(){
     return this->name;
 }
 
+void Process::decrementBurstTime(){
+    this->burstTime--;
+}
+
+void Process::incrementWaitingTime(){
+    this->waitingTime++;
+}
+

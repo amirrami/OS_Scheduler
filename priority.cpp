@@ -8,6 +8,6 @@ void Priority::setParameters(QVector<Process> process, bool preemptiveOrNot, int
 
 }
 
-void Priority::getResults(QString *ToDrawSignal, QString *ToDrawProcess, int *averageWaitingTime){
+void Priority::getResults(QString *ToDrawSignal, QString *ToDrawProcess, float *averageWaitingTime){
 
 }
