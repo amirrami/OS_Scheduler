@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ToDrawSignalPointer = &ToDrawSignal;
     ToDrawProcessPointer = &ToDrawProcess;
     averageWaitingTimePointer = &averageWaitingTime;
+
+
     actionReboot = new QAction( this );
     actionReboot->setText( tr("Restart") );
     actionReboot->setStatusTip( tr("Restarts the application") );

@@ -31,7 +31,7 @@ while (!processList.isEmpty() || !readyQueue.isEmpty() ) {
     for(int i=0; i<proNumber;i++){
         if(mainCounter == processList.front().getArrivalTime())
         {
-            if(mainCounter!=0 && emptyQueue)
+            if(mainCounter!=0 && emptyQueue && readyQueue.isEmpty())
             {
                  signal+="/";
                  processesNames+="No Process/";
@@ -69,7 +69,7 @@ while (!processList.isEmpty() || !readyQueue.isEmpty() ) {
             else {
                 processesNames += p.getName();
             }
-            remainingQuantum--;
+            remainingQuantum = quantumTime;
         }
         else if(readyQueue.front().getBurstTime()==1 && remainingQuantum==1) {
             for(int i =1;i<readyQueue.size();i++){
