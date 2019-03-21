@@ -94,10 +94,6 @@ void MainWindow::on_AddProcess_clicked()
 }
 
 
-
-
-
-
 void MainWindow::on_Run_clicked()
 {
     MainWindow::SortArrivalTime();
