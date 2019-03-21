@@ -18,7 +18,7 @@ private :
     QQueue<Process> readyQueue;
     QString signal;
     QString processesNames;
-    QQueue<Process> remainingTime;
+    bool preemative;
     int totalWaitingTime;
     int numberOfProcesses;
 
