@@ -60,7 +60,7 @@ void MainWindow::on_Schedulermode_currentIndexChanged(const QString &arg1)
         ui->ProcessPriority->setEnabled(false);
     }
     else if (arg1 == "Priority") {
-
+        ui->RRQuantumTime->setEnabled(false);
     }
 }
 
@@ -102,6 +102,14 @@ void MainWindow::on_Run_clicked()
     else if(ui->RRQuantumTime->isEnabled() && ui->RRQuantumTime->value() <=0) {
         QMessageBox::warning(this,"RR QuantumTime Erorr","You Did not Write RR QuantumTime");
         return;
+    }
+    if(SchedulerMode == "SJF" || SchedulerMode == "Priority" )
+    {
+        if(!(ui->Preemptive->isChecked() || ui->NonPreemptive->isChecked()))
+        {
+            QMessageBox::warning(this,"Mode Error","You Did not Check Preemptive or Not");
+            return;
+        }
     }
     if(processList.size()>=1){
         if(SchedulerMode == "FCFS"){
