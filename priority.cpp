@@ -42,7 +42,7 @@ void Priority::setParameters(QVector<Process> process, bool preemptiveOrNot, int
                 res.setBurstTime(temo);  // setting remaining time
 
                 temp = rearrange_perimative(res, temp,temo ,counter);
-                result.push_back(res); // continue
+                result.enqueue(res); // continue
 
 
             }
@@ -109,7 +109,7 @@ void Priority::setParameters(QVector<Process> process, bool preemptiveOrNot, int
                 //Process res =process[0];  // to check errors
                  res.setWaitingTime(counter - res.getArrivalTime()); // set waiting time
 
-                result.push_back(res); // continue
+                result.enqueue(res); // continue
                 counter += res.getBurstTime();
 
             }
@@ -170,7 +170,7 @@ bool Priority::check_existance(QQueue<Process> a, Process b) {
     {
         if (b.getName() == temp.front().getName ())
             return true;
-        temp.pop_back();
+        temp.dequeue();
     }
 
 
@@ -260,7 +260,7 @@ void Priority::my_result_perimative(QQueue<Process> a) {
         }
 
 
-         a.pop_back();
+         a.dequeue();
 
 
     }
