@@ -148,7 +148,7 @@ void Priority::setParameters(QVector<Process> process, bool preemptiveOrNot, int
 void Priority::getResults(QString *ToDrawSignal, QString *ToDrawProcess, float* averageWaitingTime) {
 
 
-    *averageWaitingTime = (waiting_time / number_process);
+    *averageWaitingTime = (float)waiting_time / (float ) number_process;
     *ToDrawSignal = result_ones;
     *ToDrawProcess = result_names;
 
