@@ -147,7 +147,8 @@ void SJF:: SJF_Preemative(){
                     for(int j=i+1 ; j<readyQueue.size();j++){
                         if(readyQueue[i].getBurstTime() > readyQueue[j].getBurstTime()){
                             std::swap(readyQueue[i],readyQueue[j]);
-                            swap = true ;
+                            if(i==0)
+                                swap = true ;
                         }
                     }
                 }
@@ -191,6 +192,19 @@ void SJF:: SJF_Preemative(){
                 }
             }
             else if(readyQueue.front().getBurstTime()==0) {
+                Process p = readyQueue.front();
+                readyQueue.pop_front();
+
+                if(!readyQueue.isEmpty() || !processList.isEmpty())
+                {
+                    signal +="/";
+                    processesNames+=p.getName()+"/";
+                }
+                else {
+                    processesNames += p.getName();
+                }
+            }
+            /*else if(readyQueue.front().getBurstTime()==0) {
                 for(int i =1;i<readyQueue.size();i++){
                     readyQueue[i].incrementWaitingTime();
                     totalWaitingTime++;
@@ -207,7 +221,7 @@ void SJF:: SJF_Preemative(){
                 else {
                     processesNames += p.getName();
                 }
-            }
+            }*/
         }
         else {
             signal+="1";
